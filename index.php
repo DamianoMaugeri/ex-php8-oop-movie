@@ -38,6 +38,10 @@ require_once './db.php';
                         <p class="card-text"><strong>Generi:</strong>
                             <?php echo implode(', ', array_map(fn($g) => $g->nome, $movie->generi)); ?>
                         </p>
+                        <p class="card-text"><strong>vietato ai minori di:</strong>
+                            <?php echo $movie->getMinRequiredAge() . " anni" ?>
+                        </p>
+
 
                         <p class="card-text"><strong>Media Voti:</strong> 
                             <?php echo $movie->getValutazioneMedia(); ?>
